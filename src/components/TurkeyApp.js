@@ -23,14 +23,8 @@ function TurkeyApp() {
     setCityname(cityname.toUpperCase());
   };
   return (
-    <div
-      style={{
-        display: "inline-table",
-        width: "40rem",
-        float: "left",
-        backgroundColor: "red",
-      }}
-    >
+    <div>
+      {cityname}
       <TurkeyMap
         onHover={({ plateNumber, name }) =>
           turkishtoEnglish(name.toUpperCase())
