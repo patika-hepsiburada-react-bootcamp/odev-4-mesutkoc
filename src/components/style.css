@@ -1,26 +1,11 @@
-.weatherContainer{
+.weatherCardDetail .weatherIcon{
+    width: 3rem;
+    height: 3rem;
     text-align: center;
-    display: inline-block;
-    width: 100%;
+    margin-right: 0.5rem;
 }
-.turkeyMap{
+.weatherCardDetail .listIcon{
     text-align: center;
-    width: 60%;
-    float: left;
-}
-.weatherCard{
-    text-align: center;
-    width: 30%;
-    float:right;
-    margin-top:5%;
-    margin-right:5%;
-
-}
-.weatherCard .justify-content-md-center{
-    padding-top: 2rem;
-    width: 5rem;
-    align-self: center;
-}
-.cardList{
-    list-style: none;
+    width: 2.5rem;
+    margin-right: 0.5rem;
 }

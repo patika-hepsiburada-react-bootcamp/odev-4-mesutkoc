@@ -3,8 +3,6 @@ import TurkeyMap from "turkey-map-react";
 import { useCityname } from "../contexts/CitynameContext";
 import { useCity } from "../contexts/CityContext";
 
-// import { Button, Modal } from "react-bootstrap";
-
 function TurkeyApp() {
   const { cityname,setCityname } = useCityname();
   const { setCity } = useCity();
@@ -24,13 +22,13 @@ function TurkeyApp() {
   };
   return (
     <div>
-      {cityname}
+      <h4 className="text-center">{cityname}</h4>
       <TurkeyMap
         onHover={({ plateNumber, name }) =>
           turkishtoEnglish(name.toUpperCase())
         }
         onClick={({ plateNumber, name }) => setCity(cityname)}
-        customStyle={{ idleColor: "#444", hoverColor: "blue" }}
+        customStyle={{ idleColor: "#444", hoverColor: "#5bc0de" }}
       />
     </div>
   );
