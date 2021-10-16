@@ -1,11 +1,22 @@
 import WeatherContainer from "./components/WeatherContainer";
 import "./App.css";
-
+import { Router, Switch, Route } from "react-router-dom";
+import Details from "./components/Details";
+import history from "./components/history"
 function App() {
   return (
-    <div className="App" >
-      <WeatherContainer></WeatherContainer>
-    </div>
+    <Router history={history}>
+      <div className="App">
+        <Switch>
+          <Route path="/details">
+            <Details></Details>
+          </Route>
+          <Route path="/">
+            <WeatherContainer></WeatherContainer>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
