@@ -20,17 +20,17 @@ function TurkeyApp() {
       .replace(/Ö/, "O");
     setCityname(cityname.toUpperCase());
   };
+  const getCity = () => {
+    setCity(cityname);
+  }
   return (
-    <div>
-      <h4 className="text-center">{cityname}</h4>
       <TurkeyMap
         onHover={({ plateNumber, name }) =>
           turkishtoEnglish(name.toUpperCase())
         }
-        onClick={({ plateNumber, name }) => setCity(cityname)}
+        onClick={({ plateNumber, name }) => getCity()}
         customStyle={{ idleColor: "#444", hoverColor: "#5bc0de" }}
       />
-    </div>
   );
 }
 

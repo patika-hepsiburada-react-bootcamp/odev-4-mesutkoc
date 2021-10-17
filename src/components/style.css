@@ -1,11 +1,11 @@
-.weatherCardDetail .weatherIcon{
-    width: 3rem;
-    height: 3rem;
-    text-align: center;
-    margin-right: 0.5rem;
+.weatherCardDetail .weatherIcon {
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  margin-right: 0.5rem;
 }
-.weatherCardDetail .listIcon{
-    text-align: center;
-    width: 2.5rem;
-    margin-right: 0.5rem;
+.weatherCardDetail .listIcon {
+  text-align: center;
+  width: 2.5rem;
+  margin-right: 0.5rem;
 }
