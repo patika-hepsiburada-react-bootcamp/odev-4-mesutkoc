@@ -2,7 +2,7 @@
 
 ## Weather Application
 
-[Live Demo](https://silly-leakey-0f754c.netlify.app/)
+[Live Demo](https://silly-leakey-0f754c.netlify.app/) soCloud
 ## Homework 4 Details
 
 This repository contains third homework. [See details](https://github.com/patika-hepsiburada-react-bootcamp/odevler/tree/main/odev4).
