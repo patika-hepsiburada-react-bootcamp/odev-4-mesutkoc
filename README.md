@@ -3,6 +3,7 @@
 ## Weather Application
 
 [Live Demo](https://silly-leakey-0f754c.netlify.app/) 
+
 (soCloud) ![soCloud](https://github.com/patika-hepsiburada-react-bootcamp/odev-4-mesutkoc/blob/master/public/favicon.ico)
 
 ## Homework 4 Details
