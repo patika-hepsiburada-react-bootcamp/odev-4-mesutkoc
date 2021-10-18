@@ -1,6 +1,5 @@
 import React from "react";
 import { useCity } from "../contexts/CityContext";
-
 import { useQuery } from "@apollo/client";
 import { WEATHER_QUERY } from "../Queries/queries";
 import { Navbar, Container, Image, Nav, Button } from "react-bootstrap";
@@ -10,6 +9,7 @@ import windIcon from "../assets/wind.png";
 import humidity from "../assets/humidity.png";
 import celsius from "../assets/celsius.png";
 
+//this component contains navbar as weather card.
 function WeatherCard() {
   const { city } = useCity();
 
@@ -17,19 +17,15 @@ function WeatherCard() {
     variables: { name: city },
   });
   const kelvinToCelsius = (actual) => (actual - 273.15).toFixed(2);
-
+  //render error component
   if (error) {
     return <div>Error {error}</div>;
   }
+
+  //render loading component
   if (loading) {
     return (
-      <Navbar
-        className="h-50"
-        collapseOnSelect
-        expand="lg"
-        bg="info"
-        variant="dark"
-      >
+      <Navbar className="h-50" collapseOnSelect expand="lg" variant="dark">
         <Container className="d-flex justify-content-center">
           <Nav className="bg-light px-3 py-1 rounded">
             <Navbar.Text className="text-dark fw-bold fs-4">
@@ -40,17 +36,11 @@ function WeatherCard() {
       </Navbar>
     );
   }
-
+  //render navbar component that contains city weather info without details.
   return (
     <div className="weatherCardDetail">
       {data.getCityByName === null && (
-        <Navbar
-          className="h-50"
-          collapseOnSelect
-          expand="lg"
-          bg="info"
-          variant="dark"
-        >
+        <Navbar className="h-50" collapseOnSelect expand="lg" variant="dark">
           <Container className="d-flex justify-content-center">
             <Nav className="bg-light px-3 py-1 rounded">
               <Navbar.Text className="text-dark fw-bold fs-4">
@@ -62,13 +52,7 @@ function WeatherCard() {
       )}
 
       {data.getCityByName !== null && (
-        <Navbar
-          collapseOnSelect
-          expand="lg"
-          className="h-50"
-          bg="info"
-          variant="dark"
-        >
+        <Navbar collapseOnSelect expand="lg" className="h-50" variant="dark">
           <Container>
             <Nav className="bg-light px-3 py-1 rounded">
               <Image
@@ -106,7 +90,9 @@ function WeatherCard() {
             <Nav>
               <Button
                 className="bg-light text-dark"
-                onClick={() => history.push("/details")}
+                onClick={() =>
+                  history.push(`/details/${data.getCityByName.id}`)
+                }
               >
                 Details
               </Button>

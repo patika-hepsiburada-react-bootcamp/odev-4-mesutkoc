@@ -8,7 +8,7 @@ import sunny from "../weathericon/sunny.png";
 import rains from "../weathericon/rain.png";
 import cloudssunny from "../weathericon/cloudssunny.png";
 
-
+//this part return icon.
 const getIcon = (icon) => {
   if (icon === "01d") {
     return sunny;
@@ -36,4 +36,3 @@ const getIcon = (icon) => {
 };
 
 export default getIcon;
-

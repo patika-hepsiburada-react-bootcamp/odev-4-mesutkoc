@@ -4,8 +4,8 @@ import WeatherCard from "./WeatherCard";
 import { useCityname } from "../contexts/CitynameContext";
 
 import "./style.css";
-
-export default function WeatherContainer() {
+//this component contines turkeymap and weather card component
+function WeatherContainer() {
   const { cityname } = useCityname();
   return (
     <div className="weatherContainer">
@@ -23,3 +23,5 @@ export default function WeatherContainer() {
     </div>
   );
 }
+
+export default WeatherContainer;

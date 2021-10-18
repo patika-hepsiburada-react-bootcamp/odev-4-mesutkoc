@@ -9,3 +9,16 @@
   width: 2.5rem;
   margin-right: 0.5rem;
 }
+
+body {
+  background-image: linear-gradient(#81d4fa, #2196f3);
+
+}
+.card2 {
+  background-color: #607d8b;
+}
+
+.light-text {
+  color: #b0bec5;
+}
+

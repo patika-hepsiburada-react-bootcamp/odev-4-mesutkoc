@@ -1,11 +1,15 @@
 import { gql } from "@apollo/client";
-// query for weather card component with name parameter.
-export const WEATHER_QUERY = gql`
-  query getCityByName($name: String!) {
-    getCityByName(name: $name) {
-      id
+
+//query for detail component with id parameter.
+export const GET_CITY_DETAIL_BY_ID = gql`
+  query getCityById($id: [String!]) {
+    getCityById(id: $id) {
       name
       country
+      coord {
+        lon
+        lat
+      }
       weather {
         summary {
           description
@@ -14,9 +18,13 @@ export const WEATHER_QUERY = gql`
         }
         temperature {
           actual
+          min
+          max
+          feelsLike
         }
         wind {
           speed
+          deg
         }
         clouds {
           humidity

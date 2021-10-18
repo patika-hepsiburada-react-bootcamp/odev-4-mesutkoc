@@ -4,9 +4,11 @@ import { useCityname } from "../contexts/CitynameContext";
 import { useCity } from "../contexts/CityContext";
 
 function TurkeyApp() {
-  const { cityname,setCityname } = useCityname();
+  //use contexts to store cityname.
+  const { cityname, setCityname } = useCityname();
   const { setCity } = useCity();
 
+  //make uppercase city name and change turkish character.
   const turkishtoEnglish = (city) => {
     var cityname = city
       .replace(/Gümüşhane/gi, "GUMUSHANE")
@@ -22,15 +24,14 @@ function TurkeyApp() {
   };
   const getCity = () => {
     setCity(cityname);
-  }
+  };
+  //TurkeyMap component installed with npm.
   return (
-      <TurkeyMap
-        onHover={({ plateNumber, name }) =>
-          turkishtoEnglish(name.toUpperCase())
-        }
-        onClick={({ plateNumber, name }) => getCity()}
-        customStyle={{ idleColor: "#444", hoverColor: "#5bc0de" }}
-      />
+    <TurkeyMap
+      onHover={({ plateNumber, name }) => turkishtoEnglish(name.toUpperCase())}
+      onClick={({ plateNumber, name }) => getCity()}
+      customStyle={{ idleColor: "#444", hoverColor: "#5bc0de" }}
+    />
   );
 }
 
